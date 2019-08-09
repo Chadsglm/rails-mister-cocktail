@@ -1,35 +1,42 @@
+<div class="jumbotron jumbotron-fluid mt-5" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @cocktail.img_url %>');">
+  <div class="container">
+    <h3 class="text-center text-light">Recipe Name: <%= @cocktail.name %></h3>
+  </div>
+</div>
+
+
+
+
 <div class="container mt-5">
-
   <div class="row">
-    <div class="col-sm-12 col-md-6 mt-5" >
-      <h3>Recipe Name: <%= @cocktail.name %></h3>
-      <div class="d-flex justify-content-between">
-        <img src="<%= @cocktail.img_url %>" alt="<%= @cocktail.name %>" class="img rounded float-left d-flex justify-content-between">
-        <table class="table table-bordered ml-5">
-          <tbody>
-            <thead>
-              <th>Ingredient</th>
-              <th>Description</th>
-              <th>Action</th>
-            </thead>
-            <% @cocktail.doses.each do |dose| %>
-              <tr>
-                <td><%= dose.ingredient.name %></td>
-                <td><%= dose.description %></td>
-                <td>
-                  <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-                    <i class="fa fa-trash destroy_dose"></i>
-                  <% end %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+    <table class="table table-bordered ml-5">
+      <tbody>
+        <thead>
+          <th>Ingredient</th>
+          <th>Description</th>
+          <th>Action</th>
+        </thead>
+        <% @cocktail.doses.each do |dose| %>
+          <tr>
+            <td><%= dose.ingredient.name %></td>
+            <td><%= dose.description %></td>
+            <td>
+              <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="fa fa-trash destroy_dose"></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="d-flex justify-content-betwee mx-auto">
+      <div class="ml-4">
+        <%= link_to new_cocktail_dose_path(@cocktail) do %>
+          <i class="fas fa-plus" aria-hidden="true"> Add Dose</i>
+        <% end %>
       </div>
-
-      <h4><%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %></h4>
-
-      <div class="mt-5">
+      <div class="ml-5">
         <%= link_to root_path do %>
           <i class="fa fa-undo" aria-hidden="true"> Back to all cocktails</i>
         <% end %>
@@ -39,9 +46,15 @@
 
 </div>
 
+
+
+
+
 <!--
 <div class="col-sm-12 col-md-6">
     <%#= render "doses/new", cocktail: @cocktail, dose: @dose %>
   </div>
 </div>
 -->
+
+ <!-- <h4><i class="fas fa-plus"></i><%#= link_to "Add Dose", new_cocktail_dose_path(@cocktail) %></h4> -->

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
   # root to: 'cocktails#home'
   root to: 'cocktails#index'
   # resources :cocktails, only: [:index, :show, :new]

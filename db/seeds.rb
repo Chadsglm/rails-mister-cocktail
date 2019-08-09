@@ -45,7 +45,7 @@ result_doses = JSON.parse(dose_json_file)
 dose = result_doses['drinks']
 
 dose.each do |element|
-  10.times do
+  100.times do
     Dose.create!(
       cocktail: cocktail.sample,
       description: element['strInstructions'],
