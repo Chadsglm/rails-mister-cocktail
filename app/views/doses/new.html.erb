@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-xs-12">
     <h3>Add a new dose</h3>
-    <%= simple_form_for [cocktail, dose] do |f| %>
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
       <div class="form-group">
@@ -11,7 +11,7 @@
 
       </div>
 
-      <%= f.submit :submit class: 'btn btn-primary' %>
+      <%= f.submit class: 'btn btn-primary' %>
     <% end %>
 
     <div class="mt-5">

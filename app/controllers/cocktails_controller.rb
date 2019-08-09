@@ -9,7 +9,8 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
-    @doses = Dose.where(cocktail: @cocktail)
+    # @doses = Dose.where(cocktail: @cocktail)
+    @doses = @cocktail.doses
   end
 
   def create

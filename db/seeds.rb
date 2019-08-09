@@ -13,8 +13,8 @@ ingredient_serialized = open(url_ingredient).read
 ingredient_list = JSON.parse(ingredient_serialized)
 ingredient = ingredient_list['drinks']
 
-ingredient.each do |ing|
-  Ingredient.create(name: ing['strIngredient1'])
+ingredient.map! do |ing|
+  Ingredient.create!(name: ing['strIngredient1'])
 end
 
 puts 'Finished ingredients.'
@@ -27,8 +27,8 @@ cocktail_json_file = open(url_cocktails).read
 result_cocktails = JSON.parse(cocktail_json_file)
 cocktail = result_cocktails['drinks']
 
-cocktail.each do |element|
-  Cocktail.create(
+cocktail.map! do |element|
+  Cocktail.create!(
     name: element['strDrink'],
     img_url: element['strDrinkThumb']
   )
@@ -46,7 +46,8 @@ dose = result_doses['drinks']
 
 dose.each do |element|
   10.times do
-    Dose.create(
+    Dose.create!(
+      cocktail: cocktail.sample,
       description: element['strInstructions'],
       ingredient: ingredient.sample
     )

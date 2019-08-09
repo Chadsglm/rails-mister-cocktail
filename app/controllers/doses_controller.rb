@@ -19,7 +19,7 @@ class DosesController < ApplicationController
 
   def destroy
     @dose.destroy
-    # redirect_to cocktail_path(@cocktail)
+    redirect_to cocktail_path(@dose.cocktail)
   end
 
   private
