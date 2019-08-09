@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light fixed-top">
+  <a class="navbar-brand">Navbar</a>
+  <form class="form-inline">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="search"><i class="fa fa-search"></i></span>
+      </div>
+      <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search">
+
+      <button class="btn btn-outline-primary ml-3" type="submit">
+        <%= link_to new_cocktail_path do %>
+        <i class="fa fa-plus-square"> Add Cocktail</i>
+        <% end %>
+      </button>
+    </div>
+  </form>
+</nav>

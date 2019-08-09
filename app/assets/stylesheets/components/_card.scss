@@ -1,0 +1,21 @@
+.card {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+  .card-description {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+
+    h2 {
+      margin-bottom: 65px;
+      font-size: 24px;
+    }
+  }
+}
