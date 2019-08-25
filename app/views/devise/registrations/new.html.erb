@@ -1,0 +1,49 @@
+<div class="container">
+  <br>
+  <h2 class="text-center">Sign up</h2>
+  <br>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-group col-md-8 offset-2">
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+      <%= f.button :submit, "Sign up", :class => 'offset-10 btn btn-primary' %>
+    </div>  
+  <% end %>
+  <div class="text-center">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+
+
+<!--
+<div class="container" id="container">
+  <div class="form-container sign-up-container">
+    <form class="form" action="#">
+      <h1 class="h1">Create Account</h1>
+      <div class="social-container">
+        <a href="#" class="a social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="a social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="a social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span class="span">or use your email for registration</span>
+      <input class="input" type="text" placeholder="Name" />
+      <input class="input" type="email" placeholder="Email" />
+      <input class="input" type="password" placeholder="Password" />
+      <button class="button">Sign Up</button>
+    </form>
+  </div>
+  <%= render "devise/shared/overlay-container" %>
+</div>
+-->

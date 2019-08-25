@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'reviews/new'
   # root to: 'cocktails#home'
   root to: 'cocktails#index'

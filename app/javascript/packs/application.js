@@ -17,5 +17,8 @@
 
 import 'bootstrap';
 
-import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
+// import { loadDynamicBannerText } from '../components/banner';
+import { loadDynamicSignInUp } from '../components/sign-in-up';
+
+// loadDynamicBannerText();
+loadDynamicSignInUp();
